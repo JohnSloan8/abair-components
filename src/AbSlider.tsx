@@ -9,7 +9,6 @@ interface AbSliderProps {
   icon?: FC<SvgIconProps>;
   iconSize?: 'medium'|'large',
   value?: number;
-  defaultValue?: number;
   min?: number;
   max?: number;
   step?: number;
@@ -20,7 +19,6 @@ const AbSlider = ({
   min=0,
   max=100,
   value,
-  defaultValue=50,
   step=1,
   onChange,
   icon,
@@ -40,7 +38,6 @@ const AbSlider = ({
       <Slider
         aria-label="Speed"
         valueLabelDisplay="auto"
-        defaultValue={defaultValue}
         value={value}
         min={min}
         step={step}

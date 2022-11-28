@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.9",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -74,6 +74,8 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
-    "html-webpack-plugin": "^5.5.0"
+    "@types/mui-image": "^1.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mui-image": "^1.0.7"
   }
 }
