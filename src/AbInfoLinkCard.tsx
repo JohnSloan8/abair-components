@@ -2,13 +2,8 @@ import { Card, CardActionArea, CardContent, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-
 import Image from 'mui-image';
-
-// import { useBreakpointSize } from '@/store/viewDimensions';
-
 import { CenteredFlexBox, FlexBox } from '.';
-// import fallbackImage from '/assets/images/misc/400x400_fallbackAbairImage.jpg';
 
 interface AbInfoLinkCardProps {
   name: string;
@@ -27,7 +22,6 @@ const AbInfoLinkCard = ({
   message = '',
   breakpointSize = 'xs',
 }: AbInfoLinkCardProps) => {
-  //   const { breakpointSize } = useBreakpointSize();
   return (
     <Box m={{ sm: 2, xs: 1 }} sx={{ position: 'relative' }}>
       {message !== '' && (
