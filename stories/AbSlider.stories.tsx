@@ -8,10 +8,8 @@ const meta: Meta = {
   title: 'AbSlider',
   component: AbSlider,
   argTypes: {
-    handleChange: {
-      defaultValue: () => {
-        console.log('changed');
-      },
+    onChange: {
+      action: 'slider-changed',
     },
   },
 };

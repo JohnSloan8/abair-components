@@ -5,16 +5,15 @@ import type { SvgIconProps } from '@mui/material/SvgIcon';
 import SvgIcon from '@mui/material/SvgIcon';
 
 interface AbSliderProps {
-  handleChange: (event: Event) => void;
-  icon: FC<SvgIconProps>;
-  iconSize: 'medium'|'large',
-  value: number;
-  defaultValue: number;
-  control: string;
-  min: number;
-  max: number;
-  step: number;
-  color: string;
+  onChange: (event: Event) => void;
+  icon?: FC<SvgIconProps>;
+  iconSize?: 'medium'|'large',
+  value?: number;
+  defaultValue?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  color?: string;
 }
 
 const AbSlider = ({
@@ -23,7 +22,7 @@ const AbSlider = ({
   value,
   defaultValue=50,
   step=1,
-  handleChange,
+  onChange,
   icon,
   iconSize='medium',
   color="secondary.main",
@@ -47,7 +46,7 @@ const AbSlider = ({
         step={step}
         max={max}
         sx={{ color: color }}
-        onChange={() => {handleChange}}
+        onChange={onChange}
       />
     </Stack>
   );
