@@ -18,7 +18,7 @@ const AbInfoLinkCard = ({
   name = 'Test name',
   onClick,
   description = 'some descriptions text about what this is',
-  image = 'https://imagedesigncom.com/wp-content/uploads/2015/10/400x400.jpg',
+  image = 'https://pdntukcptgktuzpynlsv.supabase.co/storage/v1/object/public/abair-bucket/applications/scealai-image.png',
   message = '',
   breakpointSize = 'xs',
 }: AbInfoLinkCardProps) => {
