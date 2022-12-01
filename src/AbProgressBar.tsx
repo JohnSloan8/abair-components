@@ -7,7 +7,8 @@ import { gsap } from 'gsap';
 
 interface AbProgressBarProps {
   running: boolean;
-  height: number;
+  height: number | string;
+  width: number | string;
   borderWidth: number;
   color: 'warning.main' | 'primary.main' | 'secondary.main';
   timeLimit: number;
@@ -16,8 +17,9 @@ interface AbProgressBarProps {
 
 const AbProgressBar = ({
   running = true,
-  height = 10,
-  borderWidth = 0,
+  height = 5,
+  width = '100%',
+  borderWidth = 1,
   color = 'warning.main',
   timeLimit = 5,
   handleComplete = () => {
@@ -56,7 +58,7 @@ const AbProgressBar = ({
   }, [running]);
 
   return (
-    <Box height={height} border={borderWidth} borderColor={color}>
+    <Box height={height} width={width} border={borderWidth} borderColor={color}>
       <Box
         id="progressBar"
         ref={recognitionProgressTimer}
