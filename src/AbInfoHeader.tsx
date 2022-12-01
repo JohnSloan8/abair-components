@@ -15,8 +15,8 @@ interface AbInfoHeaderProps {
 
 function AbInfoHeader({
   title = 'Test Header',
-  description = 'Test Description',
   color = 'text.primary',
+  description,
   titleFonts = ['h5', 'h6'],
   descriptionFonts = ['h6', 'body1'],
 }: AbInfoHeaderProps) {

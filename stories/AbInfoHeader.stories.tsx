@@ -5,6 +5,11 @@ import { AbInfoHeader, AbInfoHeaderProps } from '../src/AbInfoHeader';
 const meta: Meta = {
   title: 'AbInfoHeader',
   component: AbInfoHeader,
+  argTypes: {
+    description: {
+      defaultValue: 'test description',
+    },
+  },
 };
 
 const Template: Story<AbInfoHeaderProps> = args => <AbInfoHeader {...args} />;
