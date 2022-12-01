@@ -5,15 +5,17 @@ import type { SvgIconProps } from '@mui/material/SvgIcon';
 import SvgIcon from '@mui/material/SvgIcon';
 
 interface AbIconButtonProps {
-  color: 'primary' | 'secondary' | 'warning' | 'background';
-  handleClick: () => void;
+  color: 'primary' | 'secondary' | 'warning' | 'info';
+  selected?: boolean;
+  onClick: () => void;
   disabled?: boolean;
   icon?: FC<SvgIconProps>;
 }
 
 const AbIconButton = ({
   color="primary",
-  handleClick=() => {console.log('clicked')},
+  selected=true,
+  onClick=() => {console.log('clicked')},
   icon,
   disabled = false,
 }: AbIconButtonProps) => {
@@ -22,15 +24,14 @@ const AbIconButton = ({
     <IconButton
       disabled={disabled}
       sx={{
-        color: `${color}.main`,
+        color: color,
         backgroundColor: 'rgba(0,0,0,0)',
-        '&:hover': { backgroundColor: 'rgba(0,0,0,0)', color: `${color}.main` },
         m: 1,
         p: 0,
       }}
-      onClick={handleClick}
+      onClick={onClick}
     >
-      {icon !== undefined && <SvgIcon component={icon} sx={{ color: `${color}.main`}} fontSize="large" />}
+      {icon !== undefined && <SvgIcon component={icon} sx={{ color: selected ? `${color}.main` : `${color}.light`, '&:hover': { backgroundColor: 'rgba(0,0,0,0)', color: `${color}.dark` }}} fontSize="large" />}
     </IconButton>
   );
 };

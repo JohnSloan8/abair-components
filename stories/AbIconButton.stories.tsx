@@ -14,6 +14,7 @@ const Default = Template.bind({});
 
 Default.args = {
   icon: FemaleIcon,
+  color: 'secondary',
 };
 
 export default meta;

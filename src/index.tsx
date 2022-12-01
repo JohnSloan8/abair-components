@@ -7,13 +7,14 @@ export { AbMap } from './AbMap';
 export { AbClickableCard } from './AbClickableCard';
 export { AbNewsCard } from './AbNewsCard';
 export { AbInfoHeader } from './AbInfoHeader';
+export { AbLoading } from './AbLoading';
 export { AbIconButton } from './AbIconButton';
 export { AbPublication } from './AbPublication';
 export { AbNewsStory } from './AbNewsStory';
 export { AbProgressBar } from './AbProgressBar';
 export { AbInfoLinkCard } from './AbInfoLinkCard';
+export { HorizontallyCenteredFlexBox } from './flex';
 export {
-  HorizontallyCenteredFlexBox,
   FlexBox,
   CenteredFlexBox,
   FullSizeCenteredFlexBox,
