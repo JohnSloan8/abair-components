@@ -4,9 +4,9 @@ import React from 'react';
 interface AbTextFieldProps {
   label: string;
   rows: number;
-  disabled: boolean;
-  autoFocus: boolean;
-  value: string;
+  disabled?: boolean;
+  autoFocus?: boolean;
+  value?: string;
   onChange: (text: string) => void;
 }
 
