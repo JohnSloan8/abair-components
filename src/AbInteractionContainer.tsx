@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 import React from 'react';
 
 interface AbInteractionContainerProps {
-  buttons: React.ReactNode;
-  textbox: React.ReactNode;
+  buttons?: React.ReactNode;
+  textbox?: React.ReactNode;
   visualisation?: React.ReactNode;
   voiceRecording?: boolean;
   color: 'warning.light' | 'secondary.light';
@@ -29,9 +29,7 @@ const AbInteractionContainer = ({
       }}
     >
       <Box>{textbox}</Box>
-      {color === 'warning.light' && (
-        <Box>{voiceRecording && visualisation}</Box>
-      )}
+      {color && <Box>{voiceRecording && visualisation}</Box>}
       <Box sx={{ width: '100%', height: 50 }}>{buttons}</Box>
     </Box>
   );

@@ -2,12 +2,12 @@ import TextField from '@mui/material/TextField';
 import React from 'react';
 
 interface AbTextFieldProps {
-  label: string;
-  rows: number;
+  label?: string;
+  rows?: number;
   disabled?: boolean;
   autoFocus?: boolean;
   value?: string;
-  onChange: (text: string) => void;
+  onChange?: (text: string) => void;
 }
 
 const AbTextField = ({
@@ -16,7 +16,9 @@ const AbTextField = ({
   disabled = false,
   autoFocus = false,
   value,
-  onChange,
+  onChange = () => {
+    console.log('text changed');
+  },
 }: AbTextFieldProps) => {
   return (
     <TextField
