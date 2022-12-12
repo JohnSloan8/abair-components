@@ -9,7 +9,6 @@ export { AbNewsCard } from './AbNewsCard';
 export { AbInfoHeader } from './AbInfoHeader';
 export { AbLoading } from './AbLoading';
 export { AbIconButton } from './AbIconButton';
-export { AbRecognitionWaveVisual } from './AbRecognitionWaveVisual';
 export { AbSynthesisHistoryItem } from './AbSynthesisHistoryItem';
 export { AbInteractionContainer } from './AbInteractionContainer';
 export { AbPublication } from './AbPublication';
