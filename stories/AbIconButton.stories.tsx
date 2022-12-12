@@ -17,5 +17,13 @@ Default.args = {
   color: 'secondary',
 };
 
+const Disabled = Template.bind({});
+
+Disabled.args = {
+  icon: FemaleIcon,
+  color: 'secondary',
+  disabled: true,
+};
+
 export default meta;
-export { Default };
+export { Default, Disabled };
