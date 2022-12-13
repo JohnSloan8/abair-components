@@ -5,16 +5,14 @@ interface AbInteractionContainerProps {
   buttons?: React.ReactNode;
   textbox?: React.ReactNode;
   visualisation?: React.ReactNode;
-  voiceRecording?: boolean;
-  color: 'warning.light' | 'secondary.light';
+  variation: 'synthesis' | 'recognition';
 }
 
 const AbInteractionContainer = ({
   buttons,
   textbox,
   visualisation,
-  voiceRecording,
-  color,
+  variation,
 }: AbInteractionContainerProps) => {
   return (
     <Box
@@ -22,14 +20,15 @@ const AbInteractionContainer = ({
       pt={2}
       sx={{
         width: '100%',
-        backgroundColor: color,
+        backgroundColor:
+          variation === 'recognition' ? 'warning.light' : 'secondary.light',
         borderRadius: { sm: 3, xs: 0 },
         boxShadow: { sm: 6, xs: 3 },
         position: 'relative',
       }}
     >
-      <Box>{textbox}</Box>
-      {color && <Box>{voiceRecording && visualisation}</Box>}
+      {variation === 'recognition' && visualisation}
+      {textbox}
       <Box sx={{ width: '100%', height: 50 }}>{buttons}</Box>
     </Box>
   );

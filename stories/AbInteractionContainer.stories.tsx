@@ -18,13 +18,13 @@ const Template: Story<AbInteractionContainerProps> = args => (
 const Default = Template.bind({});
 Default.args = {
   textbox: <AbTextField />,
-  color: 'warning.light',
+  variation: 'recognition',
 };
 
 const Synthesis = Template.bind({});
 Synthesis.args = {
   textbox: <AbTextField />,
-  color: 'secondary.light',
+  variation: 'rsynthesis',
 };
 
 export default meta;
