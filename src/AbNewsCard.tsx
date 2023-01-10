@@ -11,10 +11,10 @@ interface AbNewsCardProps {
   imageSrc: string;
   date: string;
   blurb: string;
-  cardWidth: number;
-  imageHeight: number;
-  imageWidth: number;
-  textHeight: number;
+  cardWidth?: number;
+  imageHeight?: number;
+  imageWidth?: number;
+  textHeight?: number;
 }
 
 const AbNewsCard = ({
