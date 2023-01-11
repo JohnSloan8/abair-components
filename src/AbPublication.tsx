@@ -18,7 +18,7 @@ interface AbPublicationProps {
 
 function AbPublication({
   title = 'This Publication Title',
-  abstract = 'Very important findings from this research',
+  abstract = 'Important findings from this research',
   year_published = 2020,
   authors = ['I.M. Writer', 'A.N. Other'],
   handleDownload = () => {
@@ -30,12 +30,6 @@ function AbPublication({
   return (
     <Box m={{ sm: 2, xs: 1 }}>
       <Card sx={{ display: 'flex' }}>
-        {/* <CardMedia
-            component="img"
-            sx={{ width: 200 }}
-            image={images[0].url}
-            alt="Live from space album cover"
-          /> */}
         <Box>
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography variant="h6">{title}</Typography>
