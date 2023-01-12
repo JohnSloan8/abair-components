@@ -11,6 +11,7 @@ interface AbPopupProps {
   description?: string;
   condition1?: string;
   borderColor?: string;
+  buttons: [string, 'warning' | 'primary'][];
   onClick: (agree: boolean) => void;
 }
 
@@ -18,7 +19,11 @@ function AbPopup({
   title = 'Test Title',
   description = 'this is a test of the popup feature',
   condition1 = 'more conditions incase there needs further explanation',
-  borderColor = 'primary.main',
+  borderColor = 'warning.main',
+  buttons = [
+    ['disagree', 'warning'],
+    ['agree', 'primary'],
+  ],
   onClick,
 }: AbPopupProps) {
   return (
@@ -45,26 +50,18 @@ function AbPopup({
       </Typography>
 
       <CenteredFlexBox pb={2}>
-        <Box m={1}>
-          <AbButton
-            label={'disagree'}
-            selected={true}
-            color={'warning'}
-            onClick={() => {
-              onClick(false);
-            }}
-          />
-        </Box>
-        <Box m={1}>
-          <AbButton
-            label={'agree'}
-            selected={true}
-            color={'primary'}
-            onClick={() => {
-              onClick(true);
-            }}
-          />
-        </Box>
+        {buttons.map((b: [string, 'warning' | 'primary'], i: number) => (
+          <Box m={1}>
+            <AbButton
+              label={b[0]}
+              selected={true}
+              color={b[1]}
+              onClick={() => {
+                i === 0 ? onClick(false) : onClick(true);
+              }}
+            />
+          </Box>
+        ))}
       </CenteredFlexBox>
     </Box>
   );

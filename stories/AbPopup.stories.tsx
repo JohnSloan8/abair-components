@@ -11,5 +11,11 @@ const Template: Story<AbPopupProps> = args => <AbPopup {...args} />;
 
 const Default = Template.bind({});
 
+const SingleButtonAgree = Template.bind({});
+SingleButtonAgree.args = {
+  borderColor: 'primary.main',
+  buttons: [['ok', 'primary']],
+};
+
 export default meta;
-export { Default };
+export { Default, SingleButtonAgree };
