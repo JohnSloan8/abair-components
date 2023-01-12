@@ -15,6 +15,7 @@ const SingleButtonAgree = Template.bind({});
 SingleButtonAgree.args = {
   borderColor: 'primary.main',
   buttons: [['ok', 'primary']],
+  condition1: '',
 };
 
 export default meta;
