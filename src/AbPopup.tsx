@@ -56,7 +56,7 @@ function AbPopup({
 
       <CenteredFlexBox pb={2}>
         {buttons.map((b: PopupButtonProps, i: number) => (
-          <Box m={1}>
+          <Box m={1} key={i}>
             <AbButton
               label={b.text}
               selected={true}
