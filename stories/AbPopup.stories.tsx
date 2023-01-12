@@ -14,7 +14,7 @@ const Default = Template.bind({});
 const SingleButtonAgree = Template.bind({});
 SingleButtonAgree.args = {
   borderColor: 'primary.main',
-  buttons: [['ok', 'primary']],
+  buttons: [{ text: 'ok', color: 'primary' }],
   condition1: '',
 };
 
