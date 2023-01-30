@@ -1,34 +1,67 @@
 import * as React from 'react';
-import Paper from '@mui/material/Paper';
-import MenuList from '@mui/material/MenuList';
+// import { AbIconButton } from '.';
+import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import ListItemText from '@mui/material/ListItemText';
+import Button from '@mui/material/Button';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 interface AbMenuProps {
   items: string[];
-  handleClick: (item: string) => void;
+  handleMenuChoice: (item: string) => void;
 }
 
 const AbMenu = ({
   items = ['Profile', 'Log Out'],
-  handleClick = (item: string) => console.log(item),
+  handleMenuChoice = item => {
+    console.log('item:', item);
+  },
 }: AbMenuProps) => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleChoice = (item: string) => {
+    setAnchorEl(null);
+    handleMenuChoice(item);
+  };
+
   return (
-    <Paper sx={{ width: 140, maxWidth: '100%' }}>
-      <MenuList dense>
+    <>
+      <Button
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        <AccountCircleIcon
+          sx={{
+            color: 'white',
+          }}
+          fontSize="large"
+        />
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
         {items.map((item, i) => (
-          <MenuItem key={i}>
-            <ListItemText
-              onClick={() => {
-                handleClick(item);
-              }}
-            >
-              {item}
-            </ListItemText>
+          <MenuItem key={i} onClick={() => handleChoice(item)}>
+            {item}
           </MenuItem>
         ))}
-      </MenuList>
-    </Paper>
+      </Menu>
+    </>
   );
 };
 
