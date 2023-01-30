@@ -4,6 +4,7 @@ export { AbTextField } from './AbTextField';
 export { AbPopup } from './AbPopup';
 export { AbTabs } from './AbTabs';
 export { AbMap } from './AbMap';
+export { AbMenu } from './AbMenu';
 export { AbClickableCard } from './AbClickableCard';
 export { AbNewsCard } from './AbNewsCard';
 export { AbInfoHeader } from './AbInfoHeader';
