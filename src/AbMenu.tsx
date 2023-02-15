@@ -3,15 +3,18 @@ import * as React from 'react';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+import Avatar from '@mui/material/Avatar';
 
 interface AbMenuProps {
   items: string[];
+  avatar: string | '';
   handleMenuChoice: (item: string) => void;
 }
 
 const AbMenu = ({
   items = ['Profile', 'Log Out'],
+  avatar = '',
   handleMenuChoice = item => {
     console.log('item:', item);
   },
@@ -39,11 +42,13 @@ const AbMenu = ({
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <AccountCircleIcon
-          sx={{
-            color: 'white',
-          }}
-          fontSize="large"
+        <Avatar
+          src={
+            avatar === ''
+              ? 'https://pdntukcptgktuzpynlsv.supabase.co/storage/v1/object/public/abair-bucket/avatars/anon-avatar.png'
+              : avatar
+          }
+          alt="me"
         />
       </Button>
       <Menu
