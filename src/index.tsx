@@ -1,4 +1,4 @@
-export { AbButton } from './AbButton';
+export { AbButton, AbButtonProps } from './AbButton';
 export { AbSlider } from './AbSlider';
 export { AbTextField } from './AbTextField';
 export { AbPopup } from './AbPopup';

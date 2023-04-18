@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 
 interface AbMenuProps {
   items: string[];
-  avatar: string | '';
+  avatar: string;
   handleMenuChoice: (item: string) => void;
 }
 
@@ -59,6 +59,7 @@ const AbMenu = ({
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
+        disableScrollLock={true}
       >
         {items.map((item, i) => (
           <MenuItem key={i} onClick={() => handleChoice(item)}>
