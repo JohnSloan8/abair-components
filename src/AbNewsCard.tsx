@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import Image from 'mui-image';
 import { CenteredFlexBox } from '.';
+import { SportsRugbySharp } from '@mui/icons-material';
 
 interface AbNewsCardProps {
   title: string;
@@ -12,9 +13,9 @@ interface AbNewsCardProps {
   date: string;
   blurb: string;
   cardWidth?: number;
-  imageHeight?: number;
-  imageWidth?: number;
-  textHeight?: number;
+  imageHeight?: string;
+  imageWidth?: string;
+  textHeight?: string;
 }
 
 const AbNewsCard = ({
@@ -23,17 +24,24 @@ const AbNewsCard = ({
   date = '2022-11-02',
   imageSrc = '',
   cardWidth = 300,
-  imageHeight = 140,
-  imageWidth = 140,
-  textHeight = 200,
+  imageHeight = '200px',
+  imageWidth = '300px',
+  textHeight = '120px',
   onClick = () => {
     console.log('news clicked');
   },
 }: AbNewsCardProps) => {
   return (
-    <Card sx={{ boxShadow: 3, width: cardWidth, height: '100%' }}>
-      <CardActionArea onClick={onClick}>
-        <CenteredFlexBox>
+    <Card sx={{ boxShadow: 2, width: cardWidth, height: '100%' }}>
+      <CardActionArea
+        onClick={onClick}
+        sx={{ backgroundColor: 'secondary.main' }}
+      >
+        <CenteredFlexBox
+          sx={{ position: 'relative' }}
+          borderBottom={4}
+          borderColor={'secondary.dark'}
+        >
           <Image
             duration={1000}
             height={imageHeight}
@@ -44,14 +52,30 @@ const AbNewsCard = ({
             bgColor="#fff"
             showLoading
           />
+          <Box
+            width={'100%'}
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              background:
+                'linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,1))',
+            }}
+          >
+            <Typography align="center" p={1} variant="h6" color="#fff">
+              {title}
+            </Typography>
+          </Box>
         </CenteredFlexBox>
         <CardContent>
           <Box height={textHeight}>
-            <Typography variant="body2">{date}</Typography>
-            <Typography gutterBottom variant="h6">
-              {title}
+            <Typography
+              align="center"
+              color="background.default"
+              variant="body2"
+            >
+              {date}
             </Typography>
-            <Typography variant="body2" color="text.secondary" align="center">
+            <Typography mt={0.5} variant="body1">
               {blurb}
             </Typography>
           </Box>
