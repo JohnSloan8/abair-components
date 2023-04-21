@@ -75,6 +75,7 @@
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
     "@types/mui-image": "^1.0.1",
+    "dayjs": "^1.11.7",
     "gsap": "^3.11.3",
     "html-webpack-plugin": "^5.5.0",
     "mui-image": "^1.0.7",

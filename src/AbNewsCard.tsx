@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import Image from 'mui-image';
-import { CenteredFlexBox } from '.';
+import { FullSizeCenteredFlexBox, CenteredFlexBox } from '.';
+import dayjs from 'dayjs';
 
 interface AbNewsCardProps {
   title: string;
@@ -48,29 +49,38 @@ const AbNewsCard = ({
             showLoading
           />
           <Box
-            width={'100%'}
             sx={{
               position: 'absolute',
-              bottom: 0,
-              background:
-                'linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(227, 242, 253,1))',
+              bottom: -24,
+              right: 8,
+              borderRadius: '50%',
+              height: 54,
+              width: 54,
+              backgroundColor: 'secondary.main',
+              color: '#fff',
             }}
           >
-            <Typography
-              sx={{
-                position: 'relative',
-                bottom: -24,
-              }}
-              align="center"
-              p={1}
-              variant="h6"
+            <FullSizeCenteredFlexBox
+              sx={{ position: 'relative' }}
+              flexDirection="column"
             >
-              {title}
-            </Typography>
+              <Typography variant="body2">
+                {dayjs(date).format('MMM DD')}
+              </Typography>
+              <Typography
+                sx={{ position: 'absolute', bottom: 1 }}
+                variant="body2"
+              >
+                {dayjs(date).format('YY')}
+              </Typography>
+            </FullSizeCenteredFlexBox>
           </Box>
         </CenteredFlexBox>
         <CardContent>
           <Box height={textHeight}>
+            <Typography align="center" p={1} variant="h6">
+              {title}
+            </Typography>
             <Typography align="center" color="text.secondary" variant="body2">
               {date}
             </Typography>
